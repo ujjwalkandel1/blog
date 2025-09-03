@@ -21,7 +21,7 @@ function Search() {
             },
         ]
 
-        const [activeIndex,setActiveIndex] = useState(0)
+        const [activeIndex,setActiveIndex] = useState(0);
 
   return (
     <div className='flex justify-center mt-8 flex-col px-[70px] md:px-[200px] '>
@@ -31,8 +31,9 @@ function Search() {
             <input type="text" placeholder='Search' className='outline-none ml-2 '/>
         </div>
         <div className='flex gap-10 justify-center mt-5'>
-            {tags.map((item)=>(
-                <ul className={}>
+            {tags.map((item,index)=>(
+                <ul onClick={()=>setActiveIndex(index)} 
+                className={`${index==activeIndex?'bg-red-500 text-white':null} p-1 pb-2 rounded-sm md:rounded-full cursor-pointer md:px-4 hover:scale-110 hover:border-[1px] border-red-500 transition-all duration-100 ease-in-out `}>
                     <li>{item.name}</li>
                 </ul>
             ))}

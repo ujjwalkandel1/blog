@@ -1,6 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const IntroPost = () => {
+function IntroPost(){
+
+  const getPost=()=>{
+
+    useEffect(()=>{
+      getPost();
+    },[])
+    GlobalApi.getPost.then(resp=>{
+      console.log(resp)
+    })
+  }
   return (
     <div>IntroPost</div>
   )
